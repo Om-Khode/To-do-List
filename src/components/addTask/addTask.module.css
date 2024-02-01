@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
+}
+
+.addTask {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 35%;
+  border: 1px solid #ccc;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Segoe UI";
+}
+
+.formGroup input {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0px 0px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  letter-spacing: 1px;
+}
+
+.formGroup input:focus {
+  border: 1px solid #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.formGroup textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0px 0px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 14px;
+  resize: none;
+  height: 200px;
+}
+
+.formGroup textarea:focus {
+  border: 1px solid #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.formGroup label {
+  display: span-block;
+  font-size: 14px;
+  color: #555;
+}
+
+.form button {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit {
+  background-color: #007bff;
+}
+
+.close {
+  background-color: grey;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 1190px) {
+  .form {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .form {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .formGroup {
+    flex-direction: column;
+  }
+
+  .formBtnContainer {
+    display: flex;
+    justify-content: center;
+  }
+}

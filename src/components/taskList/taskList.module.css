@@ -1,0 +1,142 @@
+.taskListContainer {
+  margin: auto;
+  width: 80%;
+  margin-bottom: 5rem;
+}
+
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.taskCard {
+  width: 15rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.taskCard:hover {
+  box-shadow: 0 0 3px #ccc;
+}
+
+.taskCard .taskTitle {
+  font-size: 18px;
+}
+
+.taskCard .taskDescription {
+  font-size: 16px;
+  color: grey;
+  margin-top: 0.2rem;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.edit {
+  border: 5px solid #9ec5fe;
+}
+
+.edit:hover {
+  background-color: #9ec5fe;
+}
+
+.trash {
+  border: 5px solid #f9a8a8;
+}
+
+.trash:hover {
+  background-color: #f9a8a8;
+}
+
+.check {
+  border: 5px solid #a3cfbb;
+}
+
+.check:hover {
+  background-color: #a3cfbb;
+}
+
+.complete {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  color: grey;
+}
+
+.taskDueDate {
+  font-size: 14px;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  color: grey;
+}
+
+.overdue {
+  color: #dc3545;
+}
+
+.dueSoon {
+  color: #007bff;
+}
+
+.dueLater {
+  color: #28a745;
+}
+
+.checked {
+  background-color: #a3cfbb;
+}
+
+.noTask {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 20px;
+  color: grey;
+}
+
+@media screen and (max-width: 1126px) {
+  .taskListContainer {
+    width: 90%;
+  }
+
+  .taskCard {
+    width: 13rem;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .taskListContainer {
+    width: 90%;
+  }
+
+  .taskCard {
+    width: 13rem;
+  }
+
+  .flexContainer {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .taskCard {
+    width: 80%;
+  }
+}
