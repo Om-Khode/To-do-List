@@ -102,6 +102,8 @@ const AddTask = ({
             value={task.dueDate}
             onChange={handleChange}
             id="dueDate"
+            min={new Date().toISOString().slice(0, 16)}
+            required
           />
         </div>
         <div className={styles.formBtnContainer}>

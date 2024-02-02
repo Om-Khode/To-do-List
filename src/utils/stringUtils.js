@@ -40,9 +40,7 @@ function sortTasks(tasks, sortBy) {
       filteredTasks = filteredTasks.sort((a, b) => a.id - b.id);
       break;
     case "timeCreated":
-      filteredTasks.sort(
-        (a, b) => new Date(a.timeCreated) - new Date(b.timeCreated)
-      );
+      filteredTasks.sort((a, b) => new Date(a.id) - new Date(b.id));
       break;
     default:
       filteredTasks.sort((a, b) => a.title.localeCompare(b.title));

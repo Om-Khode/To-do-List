@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
+
 import { Navbar, TaskList, AddTask, SearchBar } from "./components";
 import { fetchAllTasks } from "./utils";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [tasks, setTasks] = useState({});
@@ -31,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <ToastContainer />
       <SearchBar
         setOptionSelected={setOptionSelected}
         setOpenModal={setOpenModal}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { sortTasks } from "./index";
+import { toast } from "react-toastify";
 
 const fetchAllTasks = async () => {
   console.log(process.env.REACT_APP_API_URL);
@@ -11,6 +12,7 @@ const fetchAllTasks = async () => {
     }
   } catch (err) {
     console.log(err);
+    toast.error("Some error occurred! Please try again.");
   }
 };
 
@@ -23,10 +25,12 @@ const addTask = async (task) => {
 
     const response = await axios.post(process.env.REACT_APP_API_URL, task);
     if (response.data) {
+      toast.success("Task added successfully!");
       return response.data;
     }
   } catch (err) {
     console.log(err);
+    toast.error("Some error occurred! Please try again.");
   }
 };
 
@@ -42,10 +46,12 @@ const updateTask = async (task) => {
       task
     );
     if (response.data) {
+      toast.success("Task updated successfully!");
       return response.data;
     }
   } catch (err) {
     console.log(err);
+    toast.error("Some error occurred! Please try again.");
   }
 };
 
@@ -53,10 +59,12 @@ const deleteTask = async (id) => {
   try {
     const response = await axios.delete(process.env.REACT_APP_API_URL + id);
     if (response.data) {
+      toast.success("Task deleted successfully!");
       return response.data;
     }
   } catch (err) {
     console.log(err);
+    toast.error("Some error occurred! Please try again.");
   }
 };
 
@@ -70,6 +78,7 @@ const toggleComplete = async (id) => {
     }
   } catch (err) {
     console.log(err);
+    toast.error("Some error occurred! Please try again.");
   }
 };
 
