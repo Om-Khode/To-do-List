@@ -2,8 +2,9 @@ import axios from "axios";
 import { sortTasks } from "./index";
 
 const fetchAllTasks = async () => {
+  console.log(process.env.REACT_APP_API_URL);
   try {
-    const response = await axios.get("http://localhost:8080/api/tasks/");
+    const response = await axios.get(process.env.REACT_APP_API_URL);
     if (response.data) {
       const sortedData = sortTasks(response.data, "title");
       return sortedData;
@@ -20,7 +21,7 @@ const addTask = async (task) => {
 
     task.dueDate = formattedDate;
 
-    const response = await axios.post("http://localhost:8080/api/tasks/", task);
+    const response = await axios.post(process.env.REACT_APP_API_URL, task);
     if (response.data) {
       return response.data;
     }
@@ -37,7 +38,7 @@ const updateTask = async (task) => {
     task.dueDate = formattedDate;
 
     const response = await axios.put(
-      "http://localhost:8080/api/tasks/" + task.id,
+      process.env.REACT_APP_API_URL + task.id,
       task
     );
     if (response.data) {
@@ -50,9 +51,7 @@ const updateTask = async (task) => {
 
 const deleteTask = async (id) => {
   try {
-    const response = await axios.delete(
-      "http://localhost:8080/api/tasks/" + id
-    );
+    const response = await axios.delete(process.env.REACT_APP_API_URL + id);
     if (response.data) {
       return response.data;
     }
@@ -64,7 +63,7 @@ const deleteTask = async (id) => {
 const toggleComplete = async (id) => {
   try {
     const response = await axios.put(
-      "http://localhost:8080/api/tasks/complete/" + id
+      process.env.REACT_APP_API_URL + "complete/" + id
     );
     if (response.data) {
       return response.data.success;
